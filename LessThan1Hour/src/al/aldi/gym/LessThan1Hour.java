@@ -57,6 +57,13 @@ public class LessThan1Hour {
     /*  Problem 2                                                    */
     /* ************************************************************* */
 
+    /**
+     * Join two list in an alternating list.
+     *
+     * @param list1
+     * @param list2
+     * @return
+     */
     public static String[] combineLists(String[] list1, String[] list2) {
         ArrayList<String> strList = new ArrayList<>();
 
@@ -73,7 +80,13 @@ public class LessThan1Hour {
     /*  Problem 3                                                    */
     /* ************************************************************* */
 
-    public static Integer[] getFibonaciAt(int position) {
+    /**
+     * Get fibonacci number at position.
+     *
+     * @param position
+     * @return
+     */
+    public static Integer[] getFibonacciAt(int position) {
         ArrayList<Integer> result = new ArrayList<>();
         result.add(0);
         result.add(1);
@@ -88,6 +101,12 @@ public class LessThan1Hour {
     /*  Problem 4                                                    */
     /* ************************************************************* */
 
+    /**
+     * Sort the array so that when joined it formes the largest possible number.
+     *
+     * @param list
+     * @return
+     */
     public static int largestNumCombined(int[] list) {
         List<Integer> resultList = new ArrayList<>();
 
@@ -123,6 +142,7 @@ public class LessThan1Hour {
 
     /**
      * Adds num to every sub list in first place.
+     * Also prints the list if it cumulates to SUM_VAL
      *
      * @param num
      * @param list
@@ -136,6 +156,15 @@ public class LessThan1Hour {
         }
     }
 
+
+    /**
+     * Finds all possible permutations of the operations add, substract or join numbers from the list <b>nums</b>
+     * in order to get <b>expected</b> as a result.
+     *
+     * @param expected
+     * @param nums
+     * @return
+     */
     public static LinkedList<LinkedList<Integer>> allSumsOfX(int expected, LinkedList<Integer> nums) {
         LinkedList<LinkedList<Integer>> passed = new LinkedList<>();
         nums = new LinkedList<Integer>(nums);
@@ -168,8 +197,6 @@ public class LessThan1Hour {
                 passed.add(la);
             }
         }
-
-
         return passed;
     }
 
@@ -207,7 +234,7 @@ public class LessThan1Hour {
         // Problem 3 tests
         Integer[] fibsAt = null;
         final Integer[] FIB_RESULT = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
-        fibsAt = getFibonaciAt(10);
+        fibsAt = getFibonacciAt(10);
         String fibAtStr = Arrays.asList(fibsAt).stream().map(s -> s.toString()).collect(Collectors.joining(", "));
         String fibRes = Arrays.asList(FIB_RESULT).stream().map(s -> s.toString()).collect(Collectors.joining(", "));
         boolean cmpFibResult = Arrays.equals(fibsAt, FIB_RESULT);
