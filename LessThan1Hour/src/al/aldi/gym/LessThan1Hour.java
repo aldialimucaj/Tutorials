@@ -101,12 +101,10 @@ public class LessThan1Hour {
                 if (r == 0 && o1.toString().length() != o2.toString().length()) {
                     if (o1.toString().length() > o2.toString().length()) {
                         Integer i1 = Integer.valueOf(o1.toString().substring(minLen, o1.toString().length()));
-                        Integer i2 = Integer.valueOf(o2.toString().substring(0, minLen));
-                        r = this.compare(i1, i2);
+                        r = this.compare(i1, o2);
                     } else {
-                        Integer i1 = Integer.valueOf(o1.toString().substring(0, minLen));
                         Integer i2 = Integer.valueOf(o2.toString().substring(minLen, o2.toString().length()));
-                        r = this.compare(i1, i2);
+                        r = this.compare(o1, i2);
                     }
                 }
                 return r;
@@ -218,7 +216,7 @@ public class LessThan1Hour {
 
         // Problem 4 tests
         int combiRes = 0;
-        final int[] INPUT_VALS = {1, 9, 54, 11, 6};
+        final int[] INPUT_VALS = {562,5624,2};//{1, 9, 54, 11, 6};
         final int combiExpected = 9654111;
         combiRes = largestNumCombined(INPUT_VALS);
         System.out.println("Expected: " + combiExpected + " Result: " + combiRes + " Passed: " + (combiRes == combiExpected));
