@@ -1,0 +1,8 @@
+env = Environment()
+
+debugCFlags = ['-g', '-Werror', '-std=c99']
+libs = ['m' , 'pthread']
+
+env.Append(CCFLAGS=debugCFlags)
+env.Append(LIBS=libs)
+env.Program(target = 'js-module', source = Glob('*.c'))
